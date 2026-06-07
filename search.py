@@ -2,7 +2,6 @@
 search.py — Book Recommender Pipeline
 All search logic lives here. app.py only imports from this file.
 """
-from search import recommend, hybrid_search, extract_filters, generate_recommendation
 import os
 import json
 import re
