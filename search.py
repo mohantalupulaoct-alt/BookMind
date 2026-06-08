@@ -28,7 +28,8 @@ EMBEDDINGS_NORMED = EMBEDDINGS / (norms + 1e-9)
 print(f"Ready — {len(BOOKS)} books loaded")
 
 embedder = SentenceTransformer(EMBED_MODEL)
-llm = Groq(api_key="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")
+GROQ_API_KEY=st.secrets["GROQ_API_KEY"]
+llm = Groq(api_key=GROQ_API_KEY)
 
 CATEGORY_MAP = {
     "biography":"Biography & Autobiography","autobiography":"Biography & Autobiography",
