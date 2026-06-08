@@ -2,6 +2,7 @@
 search.py — Book Recommender Pipeline (ChromaDB-free)
 Uses numpy cosine similarity — works on any Python version.
 """
+import streamlit as st
 import os
 import json
 import re
@@ -27,7 +28,7 @@ EMBEDDINGS_NORMED = EMBEDDINGS / (norms + 1e-9)
 print(f"Ready — {len(BOOKS)} books loaded")
 
 embedder = SentenceTransformer(EMBED_MODEL)
-llm      = Groq(api_key=os.environ.get("GROQ_API_KEY", ""))
+llm = Groq(api_key=st.secrets.get("GROQ_API_KEY") or os.environ.get("GROQ_API_KEY", ""))
 
 CATEGORY_MAP = {
     "biography":"Biography & Autobiography","autobiography":"Biography & Autobiography",
