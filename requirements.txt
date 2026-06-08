@@ -1,7 +1,0 @@
-streamlit
-groq
-sentence-transformers
-chromadb==0.4.24
-protobuf==4.25.3
-opentelemetry-sdk==1.23.0
-opentelemetry-exporter-otlp-proto-grpc==1.23.0
